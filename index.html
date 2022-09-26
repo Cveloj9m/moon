@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" href="/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>月亮</title>
+    <style lang="scss">
+      body{
+        margin: auto 0;
+        padding: 0;
+      }
+      @keyframes gradient {
+        0%{
+          background-position: 0 0;
+        }
+        0%{
+          background-position: 400% 0;
+        }
+      }
+      #app{
+        display: -webkit-box;
+        display: -moz-box;
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        background-color: black;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+      }
+      #loading{
+        /*设置为伸缩容器*/
+        display: -webkit-box;
+        display: -moz-box;
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        /*垂直居中*/
+        background: linear-gradient(90deg, #ff7b53, #ff418a, #34ffd0, #2cc7ff, #ff7b53, 
+         #ff418a, #ff418a, #2cc7ff, #ff7b53, #ff418a, #34ffd0, #2cc7ff, #ff7b53);
+        background-size: 400% 400%;
+        animation: gradient 5s linear infinite;
+        height: 2%;
+        width: 60%;
+        overflow: hidden;
+        border-radius: 10px;
+        z-index:1;
+      }
+      #border{
+        display: -webkit-box;
+        display: -moz-box;
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        position: relative;
+        justify-content: center;
+        align-items: center;
+        width: 85%;
+        height: 50%;
+      }
+      @keyframes border-animate{
+        0%, 100% {
+          clip-path: inset(0 0 75% 0);
+        }
+        25%{
+          clip-path: inset(0 75% 0 0);
+        }
+        50%{
+          clip-path: inset(75% 0 0 0);
+        }
+        75%{
+          clip-path: inset(0 0 0 75%);
+        }
+      }
+      #border::before,
+      #border::after{
+        content:"";
+        display: -webkit-box;
+        display: -moz-box;
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        position: absolute;
+        justify-content: center;
+        align-items: center;
+        box-sizing: border-box;
+        width: 85%;
+        height: 50%;
+        border-radius: 40%;
+      }
+      #border::before{
+        border:6px solid rgb(64, 255, 239);
+        border-radius: 40%;
+        animation: border-animate 2s linear infinite;
+      }
+      #border::after{
+        border:2px solid rgb(255, 153, 250);
+        border-radius: 40%;
+        animation: border-animate 5s linear infinite;
+      }
+
+      
+    </style>
+  </head>
+  <body>
+    <div id="app">
+      <div id="border">
+        <div id="loading"></div>
+      </div>
+    </div>
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
