@@ -1,0 +1,123 @@
+<html>
+    <head>
+        <title>测试</title>
+        <style>
+            *{
+                margin:0;
+                padding:0;
+            }
+            body{
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                height: 100vh;
+                background-image: linear-gradient(120deg, #9795f0, #fbc8d4);
+            }
+            /* input[type=radio]{
+                display: none;
+            } */
+            .card{
+                position: absolute;
+                width: 60%;
+                height: 100%;
+                left: 0;
+                right: 0;
+                margin: auto;
+                transition: transform .4s ease;
+                cursor: pointer;
+            }
+            .shell{
+                width: 100%;
+                max-width: 800px;
+                max-height: 450px;
+                height: 100%;
+                transform-style: preserve-3d;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-direction: column;
+
+            }
+            .shell div{
+                width: 100%;
+                height: 100%;
+                border-radius: 10px;
+
+            }
+            .cards{
+                position: relative;
+                width: 100%;
+                height: 100%;
+                margin-bottom: 20px;
+            }
+            #item-1:checked ~ .cards #song-1,
+            #item-2:checked ~ .cards #song-2,
+            #item-3:checked ~ .cards #song-3{
+                transform: translateX(0) scale(1);
+                opacity: 1;
+                z-index: 1;
+            }
+            #item-1:checked ~ .cards #song-2,
+            #item-2:checked ~ .cards #song-3,
+            #item-3:checked ~ .cards #song-1{
+                transform: translateX(100%) scale(0.8);
+                opacity: .6;
+                z-index: 0;
+            }
+            #item-1:checked ~ .cards #song-3,
+            #item-2:checked ~ .cards #song-1,
+            #item-3:checked ~ .cards #song-2{
+                transform: translateX(-100%) scale(0.8);
+                opacity: .6;
+                z-index: 0;
+            }
+            #song-1{
+                background-color: #3fcc4b;
+            }
+            #song-2{
+                background-color: #ee3333;
+            }
+            #song-3{
+                background-color: #cc3fcc;
+            }
+            button{
+                position: absolute;
+                top: 0px;
+                left: 50%;
+            }
+        </style>
+        <script>
+            let cards = document.querySelectorAll(".card")
+            cards.forEach(function(card) {
+                console.log(card)
+            });
+            function clickInsertCard(){
+                console.log(document.querySelector(".shell").outerHTML)
+                let cards = document.querySelectorAll(".card")
+                cards.forEach(function(card) {
+                    console.log(card)
+                });
+            }
+        </script>
+    </head>
+    <body>
+        <button onclick="clickInsertCard()">test-button</button>
+        <div class="shell">
+            <input type="radio" name="1" id="item-1" checked>
+            <input type="radio" name="1" id="item-2">
+            <input type="radio" name="1" id="item-3">
+            <div class="cards">
+                <label class="card" for="item-1" id="song-1">
+                    <div>6666666666</div>
+                </label>
+                <label class="card" for="item-2" id="song-2">
+                    <div>5555555555</div>
+                </label>
+                <label class="card" for="item-3" id="song-3">
+                    <div>4444444444</div>
+                </label>
+            </div>
+        </div>
+    </body>
+
+</html>
