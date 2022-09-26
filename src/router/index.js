@@ -15,6 +15,11 @@ const router = createRouter({
       component: () => import('../views/Test.vue')
     },
     {
+      path: '/moon',
+      name: 'moon',
+      component: () => import('../views/Moon.vue')
+    },
+    {
       path: '/',
       name: 'index',
       // route level code-splitting
