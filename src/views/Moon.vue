@@ -1,13 +1,5 @@
 <template>
-    <transition name="fade">
-        <div id="scene">
-            <!-- <div v-bind:style="cStyle" v-draggable:onPositionMouseMove class="layer">My first Layer!</div>
-            <div v-bind:style="cStyle" v-draggable:onPositionMouseMove class="layer">My second Layer!</div>
-            <spen v-bind:style="cStyle" v-draggable:onPositionMouseMove class="aaa">测试</spen> -->
-            <div class="slide-fwd-center" v-bind:style="cStyle" v-moon:onPositionMouseMove>66666666666</div>
-            {{position}}
-        </div>
-    </transition>
+    
 </template>
 
 <script>
@@ -21,29 +13,13 @@
         },
         data() {
             return {
-                position: {x: 150, y: 150},
-                focusMax : false,
-                dragging: true
+                
             }
         },
         mounted(){
         },
         computed: {
-            cStyle () {
-                var style = {}
-                if (this.position) {
-                    style.left = `${this.position.x}px`
-                    style.top = `${this.position.y}px`
-                }
-                //显示大小
-                // if (this.cardSize) {
-                //   style.width = `${this.cardSize.w}px`
-                //   style.height = `${this.cardSize.h}px`
-                // }
-                //层级
-                // style.zIndex = this.order
-                return style
-            }
+            
         },
         methods: {
 
@@ -52,7 +28,7 @@
 
         },
         directives: {
-            moon: moon
+            
         }
     }
 </script>

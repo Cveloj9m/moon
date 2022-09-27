@@ -1,5 +1,6 @@
 <template>
-    陨石坑，一个坑一个桌面
+    <el-input type="button" :click="!display">点我出桌面</el-input>
+    <section v-show="display"></section>
 </template>
 
 <script>
@@ -22,8 +23,7 @@
         },
         data() {
             return {
-
-
+                display: false
             }
         },
         mounted(){

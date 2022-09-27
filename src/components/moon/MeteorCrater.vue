@@ -1,5 +1,5 @@
 <template>
-    陨石坑，一个坑一个桌面
+    
 </template>
 
 <script>
